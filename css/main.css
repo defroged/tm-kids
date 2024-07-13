@@ -361,3 +361,10 @@ footer .copy-right span {
 [dir=rtl] .breadcrumb-section .breadcrumb-item:before {
   float:right
 }
+
+.plan-describe {
+  background-color: #009dff29;
+  font-size: 14px;
+  padding: 15px;
+  color: #444242;
+}
