@@ -364,7 +364,10 @@ footer .copy-right span {
 
 .plan-describe {
   background-color: #009dff29;
-  font-size: 14px;
-  padding: 15px;
+  font-size: 12px;
+  padding: 25px;
   color: #444242;
+  margin: 20px;
+  line-height: 2.1;
+  text-align: left; 
 }
