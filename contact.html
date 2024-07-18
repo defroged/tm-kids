@@ -140,129 +140,88 @@
     </nav>
     <!-- End Beradcrumb -->
 
-    <form class="contact-us">
-      <div class="container">
-        <!-- strat main heading -->
-        <div class="main-heading text-center">
-          <span class="text-uppercase position-relative d-inline-block px-2"
-            >Get in touch</span
-          >
-          <h2 class="fw-bold my-3">Contact Us For Any Query</h2>
+    <form class="contact-us" id="contactForm">
+  <div class="container">
+    <!-- strat main heading -->
+    <div class="main-heading text-center">
+      <span class="text-uppercase position-relative d-inline-block px-2">Get in touch</span>
+      <h2 class="fw-bold my-3">Contact Us For Any Query</h2>
+    </div>
+    <!-- end main heading -->
+
+    <!-- start form -->
+    <div class="row row-cols-1 row-cols-lg-2">
+      <div class="col p-3">
+        <div class="item">
+          <input type="text" name="name" class="form-control form-control-lg mb-3" placeholder="Your Name" aria-label="Your Name" required />
+          <input type="email" name="email" class="form-control form-control-lg mb-3" placeholder="Your Email" aria-label="Your Email" required />
+          <input type="text" name="subject" class="form-control form-control-lg mb-3" placeholder="Subject" aria-label="Subject" required />
+          <textarea name="message" class="form-control form-control-lg mb-3" placeholder="Message" aria-label="Message" required></textarea>
+          <button type="submit" class="main-link mb-2 mb-lg-0 d-inline-block text-decoration-none text-white border-0 py-2 px-4 rounded-pill">Send Message</button>
         </div>
-        <!-- end main heading -->
-
-        <!-- start form -->
-        <div class="row row-cols-1 row-cols-lg-2">
-          <div class="col p-3">
-            <div class="item">
-              <input
-                type="text"
-                class="form-control form-control-lg mb-3"
-                placeholder="Your Name"
-                aria-label="Your Name"
-              />
-
-              <input
-                type="email"
-                class="form-control form-control-lg mb-3"
-                placeholder="Your Email"
-                aria-label="Your Email"
-              />
-
-              <input
-                type="text"
-                class="form-control form-control-lg mb-3"
-                placeholder="Subject"
-                aria-label="Subject"
-              />
-
-              <textarea
-                class="form-control form-control-lg mb-3"
-                placeholder="Message"
-                aria-label="Message"
-              ></textarea>
-
-              <button
-                class="main-link mb-2 mb-lg-0 d-inline-block text-decoration-none text-white border-0 py-2 px-4 rounded-pill"
-              >
-                send Message
-              </button>
-            </div>
-          </div>
-
-          <div class="col p-3">
-            <div class="item">
-              <p class="lead">
-                Labore sea amet kasd diam justo amet ut vero justo. Ipsum ut et
-                kasd duo sit, ipsum sea et erat est dolore, magna ipsum et magna
-                elitr. Accusam accusam lorem magna, eos et sed eirmod dolor est
-                eirmod eirmod amet.
-              </p>
-
-              <!-- start media object -->
-              <div class="d-flex align-items-center gap-4 py-3">
-                <div class="icon">
-                  <i
-                    class="fa-solid fa-location-dot p-3 text-white rounded-circle"
-                  ></i>
-                </div>
-                <div class="content">
-                  <div class="h5 fw-bold">Address</div>
-                  <span class="text-muted">123 Street, New York, USA</span>
-                </div>
-              </div>
-              <!-- end media object -->
-
-              <!-- start media object -->
-              <div class="d-flex align-items-center gap-4 py-3">
-                <div class="icon">
-                  <i
-                    class="fa-solid fa-envelope p-3 text-white rounded-circle"
-                  ></i>
-                </div>
-                <div class="content">
-                  <div class="h5 fw-bold">Email</div>
-                  <span class="text-muted">info@example.com</span>
-                </div>
-              </div>
-              <!-- end media object -->
-
-              <!-- start media object -->
-              <div class="d-flex align-items-center gap-4 py-3">
-                <div class="icon">
-                  <i
-                    class="fa-solid fa-phone p-3 text-white rounded-circle"
-                  ></i>
-                </div>
-                <div class="content">
-                  <div class="h5 fw-bold">Phone</div>
-                  <span class="text-muted">+012 345 67890</span>
-                </div>
-              </div>
-              <!-- end media object -->
-
-              <!-- start media object -->
-              <div class="d-flex align-items-center gap-4 py-3">
-                <div class="icon">
-                  <i
-                    class="fa-regular fa-clock p-3 text-white rounded-circle"
-                  ></i>
-                </div>
-                <div class="content">
-                  <div class="h5 fw-bold">Opening Hours</div>
-                  <span class="text-muted">
-                    <span class="fw-bold">Sunday - Friday :</span>
-                    08:00 AM - 05:00 PM</span
-                  >
-                </div>
-              </div>
-              <!-- end media object -->
-            </div>
-          </div>
-        </div>
-        <!-- end form -->
       </div>
-    </form>
+
+      <div class="col p-3">
+        <div class="item">
+          <p class="lead">Labore sea amet kasd diam justo amet ut vero justo. Ipsum ut et kasd duo sit, ipsum sea et erat est dolore, magna ipsum et magna elitr. Accusam accusam lorem magna, eos et sed eirmod dolor est eirmod eirmod amet.</p>
+
+          <!-- start media object -->
+          <div class="d-flex align-items-center gap-4 py-3">
+            <div class="icon">
+              <i class="fa-solid fa-location-dot p-3 text-white rounded-circle"></i>
+            </div>
+            <div class="content">
+              <div class="h5 fw-bold">Address</div>
+              <span class="text-muted">123 Street, New York, USA</span>
+            </div>
+          </div>
+          <!-- end media object -->
+
+          <!-- start media object -->
+          <div class="d-flex align-items-center gap-4 py-3">
+            <div class="icon">
+              <i class="fa-solid fa-envelope p-3 text-white rounded-circle"></i>
+            </div>
+            <div class="content">
+              <div class="h5 fw-bold">Email</div>
+              <span class="text-muted">info@example.com</span>
+            </div>
+          </div>
+          <!-- end media object -->
+
+          <!-- start media object -->
+          <div class="d-flex align-items-center gap-4 py-3">
+            <div class="icon">
+              <i class="fa-solid fa-phone p-3 text-white rounded-circle"></i>
+            </div>
+            <div class="content">
+              <div class="h5 fw-bold">Phone</div>
+              <span class="text-muted">+012 345 67890</span>
+            </div>
+          </div>
+          <!-- end media object -->
+
+          <!-- start media object -->
+          <div class="d-flex align-items-center gap-4 py-3">
+            <div class="icon">
+              <i class="fa-regular fa-clock p-3 text-white rounded-circle"></i>
+            </div>
+            <div class="content">
+              <div class="h5 fw-bold">Opening Hours</div>
+              <span class="text-muted">
+                <span class="fw-bold">Sunday - Friday :</span>
+                08:00 AM - 05:00 PM
+              </span>
+            </div>
+          </div>
+          <!-- end media object -->
+        </div>
+      </div>
+    </div>
+    <!-- end form -->
+  </div>
+</form>
+
 
     <!-- Start Footer -->
     <footer>
@@ -393,6 +352,41 @@
       </div>
     </footer>
     <!-- End Footer -->
+	
+<!-- contact form script -->
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Message sent successfully!');
+      } else {
+        alert('There was an error sending your message.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('There was an error sending your message.');
+    });
+  });
+</script>
+
 
     <!-- import js files -->
     <script src="js/all.min.js"></script>
