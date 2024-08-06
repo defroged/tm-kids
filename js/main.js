@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var emailUser = 'info';
     var emailDomain = 'tm-kids.com';
     var emailElement = document.getElementById('email-link');
-    emailElement.innerHTML = '<a href="mailto:' + emailUser + '@' + emailDomain + '">' + emailUser + '@' + emailDomain + '</a>';
-  });
+    emailElement.innerHTML = '<a href="mailto:' + emailUser + '@' + emailDomain + '" class="text-decoration-none text-white">お問い合わせ</a>';
+});
   
   /******************* end email *************************/
