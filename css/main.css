@@ -373,11 +373,11 @@ footer .copy-right span {
 }
 
 /* Additional CSS for footer centering */
-.container {
+/*.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+}*/
 
 footer .row {
   display: flex;
