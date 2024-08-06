@@ -1,16 +1,36 @@
-export default function handler(req, res) {
+import nodemailer from 'nodemailer';
+
+export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, email, subject, message } = req.body;
 
-    // Here you would send the email, for example using a service like SendGrid or Nodemailer
-    // For simplicity, we will just log the message to the console
+    // Configure the email transporter
+    let transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+      }
+    });
 
-    console.log(`Name: ${name}`);
-    console.log(`Email: ${email}`);
-    console.log(`Subject: ${subject}`);
-    console.log(`Message: ${message}`);
+    // Configure the email options
+    let mailOptions = {
+      from: email,
+      to: process.env.SMTP_USER, // This can be any recipient email you prefer
+      subject: `New message from ${name}: ${subject}`,
+      text: message
+    };
 
-    res.status(200).json({ success: true });
+    try {
+      // Send the email
+      await transporter.sendMail(mailOptions);
+      res.status(200).json({ success: true });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      res.status(500).json({ success: false, message: 'Error sending email' });
+    }
   } else {
     res.status(405).json({ success: false, message: 'Method Not Allowed' });
   }
