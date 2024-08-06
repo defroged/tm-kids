@@ -70,3 +70,15 @@ gallery_tabs.forEach((element) => {
 });
 
 /****************** end gallery section *************************/
+
+
+/****************** start email *****************************/
+
+document.addEventListener('DOMContentLoaded', function() {
+    var emailUser = 'info';
+    var emailDomain = 'tm-kids.com';
+    var emailElement = document.getElementById('email-link');
+    emailElement.innerHTML = '<a href="mailto:' + emailUser + '@' + emailDomain + '">' + emailUser + '@' + emailDomain + '</a>';
+  });
+  
+  /******************* end email *************************/
