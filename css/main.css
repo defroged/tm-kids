@@ -402,5 +402,6 @@ footer .copy-right {
 }
 
 .mail-button {
-	position: relative;
+	display: flex;
+    justify-content: center;
 }
