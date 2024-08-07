@@ -400,3 +400,7 @@ footer .copy-right {
   border-top: 1px solid #fff;
   margin-top: 1rem;
 }
+
+.mail-button {
+	position: relative;
+}
