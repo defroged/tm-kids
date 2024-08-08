@@ -77,8 +77,11 @@ gallery_tabs.forEach((element) => {
 document.addEventListener('DOMContentLoaded', function() {
     var emailUser = 'info';
     var emailDomain = 'tm-kids.com';
-    var emailElement = document.getElementById('email-link');
-    emailElement.innerHTML = '<a href="mailto:' + emailUser + '@' + emailDomain + '" class="text-decoration-none text-white">お問い合わせ</a>';
+    var emailElements = document.getElementsByClassName('email-link');
+
+    for (var i = 0; i < emailElements.length; i++) {
+        emailElements[i].innerHTML = '<a href="mailto:' + emailUser + '@' + emailDomain + '" class="text-decoration-none text-white">お問い合わせ</a>';
+    }
 });
   
   /******************* end email *************************/
