@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Book Narrations</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; padding: 32px 16px;
+      background: #fff; color: #252525;
+      font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { max-width: 540px; margin: 0 auto; }
+    h1 { font-size: 1.45rem; margin: 0 0 22px; font-weight: 650; }
+    .book { padding: 22px 0; border-top: 1px solid #e5e5e5; }
+    h2 { font-size: 1.03rem; font-weight: 600; margin: 0 0 12px; }
+    audio { display: block; width: 100%; max-width: 100%; }
+    .error { color: #555; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <main id="content"><h1>Book Narrations</h1></main>
+  <script>
+    (async () => {
+      'use strict';
+      const main = document.getElementById('content');
+      const normalize = p => p.replace(/\/+$/, '') || '/';
+      const status = message => {
+        const p = document.createElement('p');
+        p.setAttribute('role', 'status');
+        p.textContent = message;
+        main.appendChild(p);
+      };
+
+      try {
+        const response = await fetch('/narrations/books.json', {cache: 'no-store'});
+        if (!response.ok) throw new Error('Unable to load book catalog');
+        const data = await response.json();
+        const page = (data.sharedPages || []).find(entry =>
+          normalize(entry.path) === normalize(window.location.pathname));
+        if (!page) {
+          status('This narration page is not available.');
+          return;
+        }
+
+        const booksBySlug = new Map((data.books || []).map(book => [book.slug, book]));
+        for (const slug of page.slugs) {
+          const book = booksBySlug.get(slug);
+          if (!book) continue;
+
+          const section = document.createElement('section');
+          section.className = 'book';
+          const heading = document.createElement('h2');
+          heading.textContent = book.title;
+          section.appendChild(heading);
+
+          if (typeof book.audioSrc === 'string' &&
+              /^\/narrations\/audio\/[\w.-]+\.(mp3|m4a|ogg)$/i.test(book.audioSrc)) {
+            const audio = document.createElement('audio');
+            audio.controls = true;
+            audio.preload = 'metadata';
+            audio.src = book.audioSrc;
+            audio.setAttribute('aria-label', book.title + ' narration');
+            audio.addEventListener('error', () => {
+              audio.remove();
+              const note = document.createElement('p');
+              note.className = 'error';
+              note.textContent = 'This narration is not available yet.';
+              section.appendChild(note);
+            }, {once: true});
+            section.appendChild(audio);
+          } else {
+            const note = document.createElement('p');
+            note.className = 'error';
+            note.textContent = 'This narration is not available yet.';
+            section.appendChild(note);
+          }
+          main.appendChild(section);
+        }
+        if (!main.querySelector('.book')) status('No narrations are available.');
+      } catch {
+        status('Unable to load the narrations.');
+      }
+    })();
+  </script>
+</body>
+</html>

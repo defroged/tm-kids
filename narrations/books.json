@@ -1,11 +1,22 @@
 {
   "books": [
     {
-      "slug": "word-rhythm-2020-2-3",
-      "title": "Word Rhythm — 2020-2-3",
-      "audioSrc": null,
-      "legacyPaths": [
-        "/members/word-rhythm/word-rhythm-2020-2-3/"
+      "slug": "the-hermit-crab-and-his-beautiful-shell",
+      "title": "The Hermit Crab and His Beautiful Shell",
+      "audioSrc": "/narrations/audio/the-hermit-crab-and-his-beautiful-shell.mp3"
+    },
+    {
+      "slug": "yukis-musical-trip",
+      "title": "Yuki's Musical Trip",
+      "audioSrc": "/narrations/audio/yukis-musical-trip.mp3"
+    }
+  ],
+  "sharedPages": [
+    {
+      "path": "/members/word-rhythm/word-rhythm-2020-2-3/",
+      "slugs": [
+        "the-hermit-crab-and-his-beautiful-shell",
+        "yukis-musical-trip"
       ]
     }
   ]

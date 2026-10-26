@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/members/word-rhythm/word-rhythm-2020-2-3",
-      "destination": "/narrations/player.html"
+      "destination": "/narrations/choose.html"
     },
     {
       "source": "/members/word-rhythm/word-rhythm-2020-2-3/",
-      "destination": "/narrations/player.html"
+      "destination": "/narrations/choose.html"
     },
     {
       "source": "/listen/:slug",
