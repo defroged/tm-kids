@@ -85,3 +85,13 @@ test('catalog has unique slugs and safe audio sources; missing levels marked una
   const magic = catalog.books.find(b => b.slug === 'the-magic-orchestra');
   assert.ok(magic.legacyPaths.includes(legacyOrchestra + '/'));
 });
+
+
+test('already published narrations reference actual MP3 files, preventing broken players', () => {
+  for (const slug of ['the-hermit-crab-and-his-beautiful-shell', 'yukis-musical-trip']) {
+    const book = catalog.books.find(b => b.slug === slug);
+    assert.ok(book && book.audioSrc, 'published book must have audio: ' + slug);
+    assert.ok(fs.existsSync(path.join(root, book.audioSrc.slice(1))),
+      'published MP3 path must match repository filename: ' + book.audioSrc);
+  }
+});
