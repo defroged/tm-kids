@@ -18,12 +18,12 @@
     {
       "slug": "im-mozart-level-2",
       "title": "I'm Mozart — Level 2",
-      "audioSrc": null
+      "audioSrc": "/narrations/audio/Im-Mozart-Narration-L2.mp3"
     },
     {
       "slug": "im-mozart-level-3",
       "title": "I'm Mozart — Level 3",
-      "audioSrc": null
+      "audioSrc": "/narrations/audio/Im-Mozart-Narration-L3-M.mp3"
     },
     {
       "slug": "the-magic-orchestra",

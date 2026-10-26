@@ -23,8 +23,14 @@ using the following exact filenames:
 - `narrations/audio/im-mozart-level-1.mp3`
 - `narrations/audio/the-magic-orchestra.mp3`
 
-I'm Mozart Level 2 and Level 3 are intentionally unconfigured until their
-separate recordings are provided.
+Both I'm Mozart Level 2 and Level 3 have been mapped to the **exact source
+filenames** requested:
+- `narrations/audio/Im-Mozart-Narration-L2.mp3`
+- `narrations/audio/Im-Mozart-Narration-L3-M.mp3`
+
+These recordings were not present in the GitHub `master` branch when the
+mapping was added. They must be uploaded and committed to that exact folder.
+Until the MP3s exist, the page will show that the narration is unavailable.
 
 To upload, open `narrations/audio` on GitHub's master branch, choose
 **Add file > Upload files**, and upload the newly named MP3 files.

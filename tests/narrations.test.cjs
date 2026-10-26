@@ -67,7 +67,7 @@ test('all narration routes and audio assets declare noindex', () => {
   assert.match(chooser, /<meta name="robots" content="noindex/);
 });
 
-test('catalog has unique slugs and safe audio sources; missing levels marked unavailable', () => {
+test('catalog has unique slugs and safe audio sources, including queued Mozart levels', () => {
   assert.equal(catalog.books.length, 6);
   const slugs = new Set();
   for (const book of catalog.books) {
@@ -77,8 +77,10 @@ test('catalog has unique slugs and safe audio sources; missing levels marked una
     slugs.add(book.slug);
     assert.ok(book.audioSrc === null || /^\/narrations\/audio\/[\w.-]+\.mp3$/.test(book.audioSrc));
   }
-  assert.equal(catalog.books.find(b => b.slug === 'im-mozart-level-2').audioSrc, null);
-  assert.equal(catalog.books.find(b => b.slug === 'im-mozart-level-3').audioSrc, null);
+  assert.equal(catalog.books.find(b => b.slug === 'im-mozart-level-2').audioSrc,
+    '/narrations/audio/Im-Mozart-Narration-L2.mp3');
+  assert.equal(catalog.books.find(b => b.slug === 'im-mozart-level-3').audioSrc,
+    '/narrations/audio/Im-Mozart-Narration-L3-M.mp3');
   for (const group of catalog.sharedPages) {
     for (const slug of group.slugs) assert.ok(slugs.has(slug), 'Unknown book ' + slug);
   }
