@@ -1,0 +1,68 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/members/word-rhythm/word-rhythm-2020-2-3",
+      "destination": "/narrations/player.html"
+    },
+    {
+      "source": "/members/word-rhythm/word-rhythm-2020-2-3/",
+      "destination": "/narrations/player.html"
+    },
+    {
+      "source": "/listen/:slug",
+      "destination": "/narrations/player.html"
+    },
+    {
+      "source": "/listen/:slug/",
+      "destination": "/narrations/player.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/members/word-rhythm/word-rhythm-2020-2-3",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/members/word-rhythm/word-rhythm-2020-2-3/",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/listen/:slug",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/listen/:slug/",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/narrations/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    }
+  ]
+}
