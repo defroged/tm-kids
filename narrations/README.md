@@ -1,47 +1,47 @@
-# QR-linked narrations (TM Kids)
+# TM Kids QR-linked narrations
 
-Two already-printed books point to the SAME old WordPress URL:
-`https://www.tm-kids.com/members/word-rhythm/word-rhythm-2020-2-3/`
+The original printed QR URLs remain unchanged, with no public navigation links:
 
-It is impossible to distinguish which QR code was scanned from that URL.
-The old URL therefore serves `narrations/choose.html`: a lightweight list
-of TWO native browser audio players, one for each book. Nothing is linked
-from the main website.
+| Original printed QR address | Experience |
+| --- | --- |
+| `/members/word-rhythm/word-rhythm-2020-2-3/` | Shared page: The Hermit Crab and His Beautiful Shell; Yuki's Musical Trip |
+| `/im-mozart-narration` | Shared page: I'm Mozart (Levels 1, 2, 3) |
+| `/members/word-rhythm/2020-1/` | Single native player: The Magic Orchestra |
 
-Unique listen pages still exist:
-- `/listen/the-hermit-crab-and-his-beautiful-shell/`
-- `/listen/yukis-musical-trip/`
+Any new book can use its own `/listen/<slug>/` direct, unlisted page.
 
-Both unique pages use `narrations/player.html` and show only a native audio
-player. They are suitable for newly printed QR codes.
+## MP3 status
 
-## Complete the audio uploads
+The two original recordings were already uploaded, but using their original
+names with spaces and punctuation. Their Git blobs were re-used under the
+expected names (no re-upload needed):
+- `narrations/audio/the-hermit-crab-and-his-beautiful-shell.mp3`
+- `narrations/audio/yukis-musical-trip.mp3`
 
-The GitHub connector can edit source text but cannot upload the binary MP3s.
-Upload the two supplied MP3 recordings using GitHub's **Add file > Upload files**
-to `master`, in directory `narrations/audio/` using EXACT names:
+The two newest uploaded recordings still need to be uploaded to GitHub
+using the following exact filenames:
+- `narrations/audio/im-mozart-level-1.mp3`
+- `narrations/audio/the-magic-orchestra.mp3`
 
-1. `the-hermit-crab-and-his-beautiful-shell.mp3`
-2. `yukis-musical-trip.mp3`
+I'm Mozart Level 2 and Level 3 are intentionally unconfigured until their
+separate recordings are provided.
 
-The `narrations/books.json` catalog already references those exact paths.
-No further source edit is needed. Test the old URL and both /listen/ URLs
-after GitHub/Vercel publishes the audio. Until then, the players report
-that the narration is unavailable, rather than playing unrelated audio.
+To upload, open `narrations/audio` on GitHub's master branch, choose
+**Add file > Upload files**, and upload the newly named MP3 files.
+Vercel deploys automatically. Both the direct pages and the shared pages
+will become playable once the recordings exist. There is no need to edit
+the catalog after uploading the two new files.
 
-For future books add a catalog entry to `narrations/books.json`. For
-additional old shared QR URLs create a `sharedPages` record and an exact
-rewrite in `vercel.json`. Do NOT route all /members/ paths to the chooser.
+## SEO and access
 
-## Privacy / SEO
+The player and chooser HTML include a `robots: noindex` meta tag.
+Vercel config returns `X-Robots-Tag: noindex, nofollow, noarchive`
+on the known old QR routes, /listen routes and /narrations files,
+including MP3 recordings. Do not disallow these URLs in robots.txt,
+because crawlers need to read the noindex instructions.
+The pages are not in public navigation/sitemaps.
 
-All related HTML pages and locally hosted MP3s receive X-Robots-Tag:
-`noindex, nofollow, noarchive`, plus a robots meta noindex on HTML.
-Do not disallow these URLs in robots.txt: crawlers need to see noindex.
-They are not included in navigation or sitemaps.
+Noindex is not authentication; anyone with the URL can listen, and
+GitHub binary files in this public repository can be downloaded.
 
-**Noindex does not restrict access.** Everyone with a link can listen and
-files committed to this public GitHub repository are publicly downloadable.
-If strict access control is needed, change the hosting architecture.
-
-Run `node --test tests/narrations.test.cjs` to validate routing and catalog.
+Run `node --test tests/narrations.test.cjs` to validate the structure.

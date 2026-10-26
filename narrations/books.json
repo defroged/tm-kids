@@ -9,14 +9,47 @@
       "slug": "yukis-musical-trip",
       "title": "Yuki's Musical Trip",
       "audioSrc": "/narrations/audio/yukis-musical-trip.mp3"
+    },
+    {
+      "slug": "im-mozart-level-1",
+      "title": "I'm Mozart — Level 1",
+      "audioSrc": "/narrations/audio/im-mozart-level-1.mp3"
+    },
+    {
+      "slug": "im-mozart-level-2",
+      "title": "I'm Mozart — Level 2",
+      "audioSrc": null
+    },
+    {
+      "slug": "im-mozart-level-3",
+      "title": "I'm Mozart — Level 3",
+      "audioSrc": null
+    },
+    {
+      "slug": "the-magic-orchestra",
+      "title": "The Magic Orchestra",
+      "audioSrc": "/narrations/audio/the-magic-orchestra.mp3",
+      "legacyPaths": [
+        "/members/word-rhythm/2020-1/"
+      ]
     }
   ],
   "sharedPages": [
     {
       "path": "/members/word-rhythm/word-rhythm-2020-2-3/",
+      "title": "Book Narrations",
       "slugs": [
         "the-hermit-crab-and-his-beautiful-shell",
         "yukis-musical-trip"
+      ]
+    },
+    {
+      "path": "/im-mozart-narration",
+      "title": "I'm Mozart",
+      "slugs": [
+        "im-mozart-level-1",
+        "im-mozart-level-2",
+        "im-mozart-level-3"
       ]
     }
   ]

@@ -46,6 +46,10 @@
           return;
         }
 
+        const headingMain = main.querySelector('h1');
+        headingMain.textContent = page.title || 'Book Narrations';
+        document.title = headingMain.textContent + ' — Narrations';
+
         const booksBySlug = new Map((data.books || []).map(book => [book.slug, book]));
         for (const slug of page.slugs) {
           const book = booksBySlug.get(slug);
